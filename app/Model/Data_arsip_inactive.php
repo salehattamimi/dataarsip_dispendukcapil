@@ -18,6 +18,7 @@ class Data_arsip_inactive extends Model
             'tempat_lahir', 
             'tanggal_lahir', 
             'kode_klasifikasi', 
+            'alamat', 
             'kelurahan',  
             'kecamatan',  
             'nama_ayah',  
