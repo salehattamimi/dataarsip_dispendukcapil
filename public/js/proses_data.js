@@ -435,7 +435,7 @@ function div_tabel_data_arsip_inactive(token, target, id) {
             no_akta: no_akta,
             nama_bayi: nama_bayi,
             kelurahan: kelurahan,
-            kelurahan: kelurahan,
+            kecamatan: kecamatan,
             tahun_mulai: tahun_mulai,
             tahun_selesai: tahun_selesai
         },

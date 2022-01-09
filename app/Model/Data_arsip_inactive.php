@@ -67,8 +67,8 @@ class Data_arsip_inactive extends Model
                 $selectAll->where('nama_bayi', 'like', '%'.$nama_bayi.'%'); 
 
             }  
-            if(!empty($nomor_akta)){
-                $selectAll->where('arsip_inaktif.nomor_akta', $nomor_akte); 
+            if(!empty($nomor_akte)){
+                $selectAll->where('arsip_inaktif.nomor_akta','like','%'.$nomor_akte.'%'); 
             }  
             if(!empty($kecamatan) ){ 
                 $selectAll->where('arsip_inaktif.kecamatan', $kecamatan);    
@@ -77,7 +77,7 @@ class Data_arsip_inactive extends Model
                 $selectAll->where('arsip_inaktif.kelurahan', $kelurahan);   
             }  
             if(!empty($tahun_mulai) && !empty($tahun_selesai)){
-            $selectAll->whereBetween(DB::raw('YEAR(created_at)'), [date($tahun_mulai), date($tahun_selesai)]);
+            $selectAll->whereBetween(DB::raw('YEAR(tanggal_terbit)'), [date($tahun_mulai), date($tahun_selesai)]);
             }  
             $selectAll = $selectAll->orderBy('id','desc'); 
             $selectAll = $selectAll->get();
@@ -94,7 +94,7 @@ class Data_arsip_inactive extends Model
             $selectAll->where('nama_bayi', 'like', '%'.$nama_bayi.'%'); 
 
         }  
-        if(!empty($nomor_akta)){
+        if(!empty($nomor_akte)){
             $selectAll->where('arsip_inaktif.nomor_akta', $nomor_akte); 
         }  
         if(!empty($kecamatan) ){ 

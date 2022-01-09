@@ -79,6 +79,7 @@ Route::group(['middleware' => 'auth'], function () {
 	
 	//START DATA DATA ARSIP INACTIVE AKTIF
 	Route::get('/admin/data_arsip_inactive', 'Dataarsip_inactiveController@index')->name('data_arsip_inactive');
+	Route::post('/admin/ajax/div_tabel_data_arsip_inactive', 'Dataarsip_inactiveController@div_tabel_data_arsip_inactive_ajax');
 	Route::post('/admin/div_tabel_data_arsip_inactive', 'Dataarsip_inactiveController@div_tabel_data_arsip_inactive');
 	Route::post('/admin/data_arsip_inactive/tambah_modal_data_arsip_inactive', 'Dataarsip_inactiveController@tambah_modal');
 	Route::post('/admin/data_arsip_inactive/tambah/simpan', 'Dataarsip_inactiveController@store')->name('simpan_tambah_data_arsip_inactive'); 

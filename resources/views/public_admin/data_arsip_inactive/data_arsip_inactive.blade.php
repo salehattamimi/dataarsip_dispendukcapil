@@ -171,7 +171,7 @@
 						</div>
 						<div class="row">
 							<div class="col-lg-3">&nbsp;</div>
-							<div class="col-lg-3"> 
+							<div class="col-lg-6"> 
 								<button title="Tampilkan" type="button"
 								class="btn btn-primary btn-sm btn-block btn_tampilkan"
 								onclick="
@@ -182,17 +182,7 @@
 									<i class="icon-filter3"></i>
 									Tampilkan
 								</button>
-							</div>
-							<div class="col-lg-3"><button title="Delete" type="button"
-								class="btn btn-danger btn-sm btn-block btn_delete"
-								onclick="
-								delete_data_arsip_inactive_tabel(
-									'{{csrf_token()}}'
-									, '#div_tabel_data_arsip');
-									">
-									<i class="icon-filter3"></i>
-									Delete
-							</button></div>
+							</div> 
 							<div class="col-lg-3">&nbsp;</div>
 						</div>
 					</div>

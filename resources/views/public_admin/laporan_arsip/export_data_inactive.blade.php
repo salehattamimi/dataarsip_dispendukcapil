@@ -57,10 +57,11 @@
                     <thead>
                         <tr> 
                             <th style="width: 0.5%">No</th>
-                            <th>Nomor Register / Akte</th> 
                             <th>Nama Bayi</th> 
                             <th>Tempat / Tanggal Lahir</th> 
                             <th>Alamat</th>
+                            <th>Kecamatan</th>
+                            <th>Kelurahan</th>
                             <th>Nama Ibu</th>  
                             <th>Nama Ayah</th>  
                             <th>Tanggal Terbit</th>  
@@ -77,10 +78,11 @@
                         ?>
                         <tr>
                             <td align="center" style="width: 0.5%">{{ $no }}</td>
-                            <td>{{ $r->nomor_akta }}</td>
                             <td>{{ $r->nama_bayi }}</td>
                             <td>{{ $r->tempat_lahir}} , {{ $r->tanggal_lahir}}</td> 
                             <td>{{$r->alamat}}<br> RT : {{$r->rt}}<br> RW : {{$r->rw}}  </td> 
+                            <td>{{$r->kecamatan}}</td>
+                            <td>{{$r->kelurahan}}</td>
                             <td>{{ $r->nama_ibu}}</td>   
                             <td>{{ $r->nama_ayah}}</td> 
                             <td>{{ $r->tanggal_terbit}}</td> 

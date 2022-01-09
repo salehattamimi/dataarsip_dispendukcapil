@@ -17,6 +17,7 @@ use App\Model\Kecamatan;
 use App\Model\Kelurahan; 
 use DB;
 use Excel;
+use Datatables;
 
 
 use App\Imports\ArsipInaktifImport;
@@ -53,8 +54,18 @@ class Dataarsip_inactiveController extends Controller
 
     public function import_excel(Request $request)
     {
-        Excel::import(new ArsipInaktifImport,request()->file('select_file'));
+        $import = Excel::import(new ArsipInaktifImport,request()->file('select_file')); 
         return redirect()->back();
+    }
+    
+    public function div_tabel_data_arsip_inactive_ajax()
+    {
+        $data_arsip_inactive = Data_arsip_inactive::div_tabel_data_arsip_inactive($nama_bayi,$nomor_akte,$kecamatan,$kelurahan,$tahun_mulai,$tahun_selesai); 
+
+        $data = DataTables::of($data_arsip_inactive)
+        ->addIndexColumn() 
+        ->make(true);
+        dd($data);
     }
 
     public function comment_arsip(Request $request)
@@ -120,7 +131,7 @@ class Dataarsip_inactiveController extends Controller
 
     public function div_tabel_data_arsip_inactive(Request $request)
     {    
-        $nomor_akte = $request->get('nomor_akte'); 
+        $nomor_akte = $request->get('no_akta'); 
         $kecamatan = $request->get('kecamatan'); 
         $nama_bayi = $request->get('nama_bayi'); 
         $kelurahan = $request->get('kelurahan');   

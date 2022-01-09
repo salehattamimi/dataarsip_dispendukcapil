@@ -174,35 +174,24 @@
             " class="btn btn-warning btn-xs btn-block">
                             <i class="glyphicon glyphicon-upload"></i> {{$upload}}
                         </button> </td>
-                <td align="center">
-                    <div class="btn-group btn-block btn-group-velocity">
-                        <button type="button" class="btn bg-blue btn-sm btn-block dropdown-toggle"
-                            data-toggle="dropdown"><i class="glyphicon glyphicon-th-list"></i> Act
-                            <span class="caret"></span></button>
-                        <ul class="dropdown-menu">
+                <td align="center"> 
 
                             @if(Auth::User()->role==2)
-                            <li>
                                 <button type="button" onclick="
                             edit_modal_data_arsip_inactive('{{csrf_token()}}', '{{ $r->id_inaktif }}', '#ModalTeal')
                             " id="modal_update_artikel" class="btn bg-teal-400 btn-block">
                                     <i class="glyphicon glyphicon-edit"> </i>Edit
-                                </button>
-                            </li>
-                            <li>
+                                </button> 
                                 <button type="button" onclick="
                             comment_modal_data_arsip_inactive('{{csrf_token()}}', '{{ $r->id_inaktif }}', '#ModalHijau')
                             " id="modal_komentar" class="btn bg-green btn-block">
-                                    <i class="glyphicon glyphicon-comment"> </i>Komentar
+                                    <i class="glyphicon glyphicon-comment"> </i> Komentar
                                 </button>
-                            </li>
-                            <li>
                                 <button type="button"
                                     onclick="hapus_data_arsip_inactive('{{csrf_token()}}','{{ $r->id_inaktif }}')"
                                     data-toggle="modal" class="btn btn-danger btn-xs btn-block">
                                     <i class="glyphicon glyphicon-remove"> </i>Hapus
                                 </button>
-                            </li>
                             @endif
                         </ul>
                     </div>
@@ -240,7 +229,7 @@ $.extend($.fn.dataTable.defaults, {
     }
 });
 $('#example').DataTable( {
-        "scrollX": true
+        "scrollX": true,
     } );
 $('.datatable-basic').DataTable();
 // END SCRIPT TABEL
